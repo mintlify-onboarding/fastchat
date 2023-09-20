@@ -44,7 +44,7 @@ See more command options and how to handle out-of-memory in the "Inference with 
 | 13B-16k  | `python3 -m fastchat.serve.cli --model-path lmsys/vicuna-13b-v1.5-16k` | [lmsys/vicuna-13b-v1.5-16k](https://huggingface.co/lmsys/vicuna-13b-v1.5-16k) |
 | 33B  | `python3 -m fastchat.serve.cli --model-path lmsys/vicuna-33b-v1.3` | [lmsys/vicuna-33b-v1.3](https://huggingface.co/lmsys/vicuna-33b-v1.3) |
 
-**Old weights**: see [docs/vicuna_weights_version.md](docs/vicuna_weights_version.md) for all versions of weights and their differences.
+**Old weights**: see [vicuna_weights_version](vicuna_weights_version) for all versions of weights and their differences.
 
 ### LongChat
 We release [LongChat](https://lmsys.org/blog/2023-06-29-longchat/) models under LLaMA's [model license](https://github.com/facebookresearch/llama/blob/main/LICENSE).
@@ -70,7 +70,7 @@ You can use the commands below to chat with FastChat-T5. It will automatically d
 FastChat supports a wide range of models, including
 LLama 2, Vicuna, Alpaca, Baize, ChatGLM, Dolly, Falcon, FastChat-T5, GPT4ALL, Guanaco, MTP, OpenAssistant, RedPajama, StableLM, WizardLM, and more.
 
-See a complete list of supported models and instructions to add a new model [here](docs/model_support.md).
+See a complete list of supported models and instructions to add a new model [here](model_support).
 
 #### Single GPU
 The command below requires around 14GB of GPU memory for Vicuna-7B and 28GB of GPU memory for Vicuna-13B.
@@ -154,15 +154,15 @@ This requires 8-bit compression to be enabled and the bitsandbytes package to be
 
 #### More Platforms and Quantization
 - For AMD GPU users, please install ROCm and [the ROCm version of PyTorch](https://pytorch.org/get-started/locally/) before you install FastChat. See also this [post](https://github.com/lm-sys/FastChat/issues/104#issuecomment-1613791563).
-- FastChat supports GPTQ 4bit inference with [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa). See [docs/gptq.md](/docs/gptq.md).
-- FastChat supports AWQ 4bit inference with [mit-han-lab/llm-awq](https://github.com/mit-han-lab/llm-awq). See [docs/awq.md](/docs/awq.md).
+- FastChat supports GPTQ 4bit inference with [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa). See [gptq](/gptq).
+- FastChat supports AWQ 4bit inference with [mit-han-lab/llm-awq](https://github.com/mit-han-lab/llm-awq). See [awq](/awq).
 - [MLC LLM](https://mlc.ai/mlc-llm/), backed by [TVM Unity](https://github.com/apache/tvm/tree/unity) compiler, deploys Vicuna natively on phones, consumer-class GPUs and web browsers via Vulkan, Metal, CUDA and WebGPU.
 
 ## Serving with Web GUI
 
 <Frame>![](https://github.com/lm-sys/FastChat/raw/main/assets/screenshot_gui.png)</Frame>
 
-To serve using the web UI, you need three main components: web servers that interface with users, model workers that host one or more models, and a controller to coordinate the webserver and model workers. You can learn more about the architecture [here](docs/server_arch.md).
+To serve using the web UI, you need three main components: web servers that interface with users, model workers that host one or more models, and a controller to coordinate the webserver and model workers. You can learn more about the architecture [here](server_arch).
 
 Here are the commands to follow in your terminal:
 
@@ -207,4 +207,4 @@ CUDA_VISIBLE_DEVICES=1 python3 -m fastchat.serve.model_worker --model-path lmsys
 ```bash
 python3 -m fastchat.serve.gradio_web_server_multi
 ```
-- The default model worker based on huggingface/transformers has great compatibility but can be slow. If you want high-throughput serving, you can try [vLLM integration](docs/vllm_integration.md).
+- The default model worker based on huggingface/transformers has great compatibility but can be slow. If you want high-throughput serving, you can try [vLLM integration](vllm_integration).

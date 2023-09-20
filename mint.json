@@ -34,7 +34,15 @@
       {
         "group": "Using FastChat",
         "pages": [
-            "arena"
+            "arena",
+            "awq",
+            "gptq",
+            "langchain_integration",
+            "model_support",
+            "server_arch",
+            "training",
+            "vicuna_weights_version",
+            "vllm_integration"
         ]
       }
     ],
