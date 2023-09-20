@@ -1,0 +1,46 @@
+{
+    "name": "FastChat",
+    "favicon": "/favicon.jpeg",
+    "colors": {
+      "primary": "#EA580C",
+      "light": "#FA7F3F",
+      "dark": "#EA580C"
+    },
+    "topbarCtaButton": {
+      "type": "github",
+      "url": "https://github.com/lm-sys/FastChat"
+    },
+    "anchors": [
+      {
+        "name": "Discord",
+        "icon": "discord",
+        "url": "https://discord.gg/HSWAKCrnFx"
+      },
+      {
+        "name": "Demo",
+        "icon": "person-chalkboard",
+        "url": "https://chat.lmsys.org/"
+      }
+    ],
+    "navigation": [
+      {
+        "group": "Welcome to FastChat",
+        "pages": [
+            "introduction",
+            "install",
+            "api-reference"
+        ]
+      },
+      {
+        "group": "Using FastChat",
+        "pages": [
+            "arena"
+        ]
+      }
+    ],
+    "footerSocials":
+      {
+          "twitter": "https://x.com/lmsysorg",
+          "discord": "https://discord.gg/HSWAKCrnFx"
+      }
+  }
